@@ -1,0 +1,8 @@
+<p>{{text | summary:200 | uppercase}}</p>
+<div (click)= "onDivClick()">
+    <button (click)= "onClick($event)" [style.backgroundColor] = "isSelected ? 'blue' : 'white'">Like!</button>
+</div>
+
+<input [value] = "email" (keyup.enter)= "email= $event.target.value; onKeyUp()">
+<p>angular two way object binding</p>
+<input [(ngModel)] = "email" (keyup.enter)= "onKeyUp()">

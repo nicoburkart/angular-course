@@ -1,0 +1,28 @@
+<div *ngIf= "courses.length > 0; then coursesList else noCourses"></div>
+<ng-template #coursesList>List of courses</ng-template>
+<ng-template #noCourses >No courses yet</ng-template>
+
+<nav class="navbar navbar-light bg-light">
+    <form class="form-inline">
+      <button [class.active] = "viewMode == 'map'" class="btn btn-outline-success" type="button" (click) = "viewMode = 'map'">MapView</button>
+      <button [class.active] = "viewMode == 'list'" class="btn btn-outline-success" type="button" (click) = "viewMode = 'list'">ListView</button>
+    </form>
+</nav>
+
+<div [ngSwitch] = "viewMode">
+    <div *ngSwitchCase="'map'">MapView Content</div>
+    <div *ngSwitchCase="'list'">ListView Content</div>
+    <div *ngSwitchDefault>Otherwise</div>
+</div>
+
+<button (click) = loadObjects()>Load objects</button>
+<button (click) = onAdd()>Add object</button>
+<ul>
+    <!-- <li *ngFor="let obj of objects; index as i">{{ i }} - {{ obj.name }}</li> -->
+    <!-- More documentation of what can be done with ngFor in angular doc -->
+    <!-- trackBy for larger lists and performance issues. trackCourse without () although mehtode -->
+    <li *ngFor="let obj of objects; even as isEven; trackBy: trackCourse">
+        {{ obj.name }} <span *ngIf="isEven">EVEN</span>
+        <button (click) = "onRemove(obj)">Remove</button>
+    </li>
+</ul>

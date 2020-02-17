@@ -1,0 +1,13 @@
+.bi {
+    fill: #ccc;
+    cursor: pointer;
+}
+
+.highlighted {
+    fill: deeppink;
+}
+
+
+p {
+    display: inline-block;
+}
