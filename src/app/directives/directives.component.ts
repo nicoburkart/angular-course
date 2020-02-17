@@ -31,6 +31,7 @@ export class DirectivesComponent {
   }
 
   trackCourse(index, object) {
+    console.log("lul")
     return object ? object.id : undefined
   } 
   
