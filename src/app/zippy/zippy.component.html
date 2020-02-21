@@ -1,0 +1,16 @@
+<div class = "card" style="width: 50%;">
+    <div class = "card-header">
+        <span>{{ title }}</span>
+        <span style="float: right;" (click)= "isCollapsed = !isCollapsed"><img *ngIf="isCollapsed; then arrowUp else arrowDown"></span>
+    </div>
+    <div *ngIf = "!isCollapsed" class = "card-body">
+        <ng-content></ng-content>
+    </div>
+</div>
+
+<ng-template #arrowDown>
+    <img src="../../assets/bootstrap-icons/icons/chevron-down.svg">
+</ng-template>
+<ng-template #arrowUp>
+    <img src="../../assets/bootstrap-icons/icons/chevron-right.svg">
+</ng-template>

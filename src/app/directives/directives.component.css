@@ -1,0 +1,11 @@
+.redColored {
+    color: red
+}
+
+.courserHover {
+    cursor: pointer;
+}
+
+.underline {
+    text-decoration: underline;
+}

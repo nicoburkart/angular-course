@@ -22,12 +22,17 @@ export class DirectivesComponent {
     this.objects.splice(index, 1)
   }
 
-  loadObjects(){
+  loadObjects() {
     this.objects = [
       { id: 1, name: 'obj1 ' },
       { id: 2, name: 'obj2 ' },
       { id: 3, name: 'obj3 ' }
     ]
+  }
+
+  nilObject = {
+    name : "I'm a nil object",
+    testObj : null
   }
 
   trackCourse(index, object) {

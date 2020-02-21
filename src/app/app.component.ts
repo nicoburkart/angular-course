@@ -20,6 +20,8 @@ export class AppComponent {
     isSelected : true
   }
 
+  items = ["nico","jonas","magali","ulas","dennis","japhet"]
+
   onFavoriteChanged(eventArgs : FavoriteChangedEventArgs) {
     console.log("favorite changed. Selected: ", eventArgs.newValue)
   }

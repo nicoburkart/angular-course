@@ -1,4 +1,7 @@
 <h1>Angular</h1>
+
+<!-- <list [items] = "items" [itemLabel] = "'itemLabel: '" [showLabel] = "true"></list> -->
+<!--
 <author-view></author-view>
 <blog></blog>
 <favorite [isFavorite] = "post.isFavorite" (change)="onFavoriteChanged($event)"></favorite>
@@ -9,5 +12,14 @@
     <div class="body"><p>body dsfkasjdöjöa</p></div>
 </bootstrap-panel>
 <like [isSelected] = "likePost.isSelected" [likes] = "likePost.likes"></like>
-
 <directives></directives>
+-->
+<!-- content of zippy is accessed by selector ng-content  -->
+<zippy title="Shipping Details">
+    Shipping Content
+</zippy>
+<zippy title="Billing Details">
+    Billing Content
+</zippy> 
+
+<contact-form></contact-form>

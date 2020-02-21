@@ -26,3 +26,21 @@
         <button (click) = "onRemove(obj)">Remove</button>
     </li>
 </ul>
+
+<!-- The true/false params could also be variables, defined in the .ts file -->
+<h1 class="underline" [ngClass] = "{ 'redColored' : true, 'courserHover' : false }">Hello World!</h1>
+
+<!-- optional unwrapping -->
+<span> {{ nilObject.testObj?.name }}</span>
+
+<button [style.backgroundColor] = "false ? 'white' : 'red'"
+        [style.color] = "true ? 'green' : 'blue'"
+        [ngStyle] = "{
+            'backgroundColor' : false ? 'white' : 'red',
+            'color' : true ? 'green' : 'blue'
+        }">
+    Hello
+</button>
+
+<!-- custom directive -->
+<input type="text" [appInputFormat] = "'lowercase'">

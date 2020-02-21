@@ -13,6 +13,10 @@ import { MakeNounsBigPipe } from './make-nouns-big.pipe';
 import { BootstrapPanelComponent } from './bootstrap-panel/bootstrap-panel.component';
 import { LikeComponent } from './like/like.component';
 import { DirectivesComponent } from './directives/directives.component';
+import { ListComponent } from './list/list.component';
+import { InputFormatDirective } from './input-format.directive';
+import { ZippyComponent } from './zippy/zippy.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +29,11 @@ import { DirectivesComponent } from './directives/directives.component';
     MakeNounsBigPipe,
     BootstrapPanelComponent,
     LikeComponent,
-    DirectivesComponent
+    DirectivesComponent,
+    ListComponent,
+    InputFormatDirective,
+    ZippyComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,
