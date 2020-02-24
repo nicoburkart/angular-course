@@ -8,6 +8,12 @@ import { NgModel, NgForm } from '@angular/forms';
 })
 export class ContactFormComponent {
 
+  contactMethods = [
+    { id: 1, name : 'Email'},
+    { id: 2, name : 'Phone'},
+    { id: 3, name : 'LOL'}
+  ]
+
   log(x : NgModel) {
     console.log(x)
   }

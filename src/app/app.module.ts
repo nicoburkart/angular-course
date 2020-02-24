@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
@@ -17,6 +17,9 @@ import { ListComponent } from './list/list.component';
 import { InputFormatDirective } from './input-format.directive';
 import { ZippyComponent } from './zippy/zippy.component';
 import { ContactFormComponent } from './contact-form/contact-form.component';
+import { UdemyCourseFormComponent } from './udemy-course-form/udemy-course-form.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -33,11 +36,15 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
     ListComponent,
     InputFormatDirective,
     ZippyComponent,
-    ContactFormComponent
+    ContactFormComponent,
+    UdemyCourseFormComponent,
+    ReactiveFormComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [AuthorService],
   bootstrap: [AppComponent]
