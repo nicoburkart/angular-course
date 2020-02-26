@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgModule, ErrorHandler } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { AuthorViewComponent } from './author-view/author-view.component';
-import { AuthorService } from './author.service';
+
 import { BlogComponent } from './blog/blog.component';
 import { SummaryPipe } from './summary.pipe';
 import { FavoriteComponent } from './favorite/favorite.component';
@@ -20,6 +20,13 @@ import { ContactFormComponent } from './contact-form/contact-form.component';
 import { UdemyCourseFormComponent } from './udemy-course-form/udemy-course-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { PostsComponent } from './posts/posts.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AuthorService } from './services/author.service';
+import { PostService } from './services/post.service';
+import { AppErrorHandler } from './common/app-error-handler';
+import { GithubFollowerComponent } from './github-follower/github-follower.component';
+import { GitFollowerService } from './services/git-follower.service';
 
 @NgModule({
   declarations: [
@@ -40,13 +47,22 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     UdemyCourseFormComponent,
     ReactiveFormComponent,
     ResetPasswordComponent,
+    PostsComponent,
+    GithubFollowerComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [AuthorService],
+  providers: [
+    AuthorService,
+    PostService,
+    GitFollowerService,
+    //wherver ErrorHandler is used by default, now AppErrorHandler takes its place
+    {provide : ErrorHandler, useClass : AppErrorHandler}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
