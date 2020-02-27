@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule, ErrorHandler } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router'
 
 import { AppComponent } from './app.component';
 import { AuthorViewComponent } from './author-view/author-view.component';
@@ -21,12 +23,15 @@ import { UdemyCourseFormComponent } from './udemy-course-form/udemy-course-form.
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { PostsComponent } from './posts/posts.component';
-import { HttpClientModule } from '@angular/common/http';
 import { AuthorService } from './services/author.service';
 import { PostService } from './services/post.service';
 import { AppErrorHandler } from './common/app-error-handler';
 import { GithubFollowerComponent } from './github-follower/github-follower.component';
 import { GitFollowerService } from './services/git-follower.service';
+import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
+import { GithubProfileComponent } from './github-profile/github-profile.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -49,12 +54,24 @@ import { GitFollowerService } from './services/git-follower.service';
     ResetPasswordComponent,
     PostsComponent,
     GithubFollowerComponent,
+    NavbarComponent,
+    HomeComponent,
+    GithubProfileComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    //order is very important -> checks all the names until it fits from 0 -> end
+    RouterModule.forRoot([
+      { path: '', component: HomeComponent },
+      { path: 'followers/:id/:username', component: GithubProfileComponent },
+      { path: 'followers', component: GithubFollowerComponent },
+      { path: 'posts', component: PostsComponent },
+      { path: '**', component: NotFoundComponent }
+    ])
   ],
   providers: [
     AuthorService,
