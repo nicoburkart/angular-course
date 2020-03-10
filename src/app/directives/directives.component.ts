@@ -7,18 +7,23 @@ import { Component } from '@angular/core';
 })
 export class DirectivesComponent {
 
-  viewMode : string
+  viewMode: string
 
-  courses = ["cours1","cours2","cours3"]
+  courses = ['cours1', 'cours2', 'cours3']
 
   objects
+
+  nilObject = {
+    name : 'I\'m a nil object',
+    testObj : null
+  }
 
   onAdd() {
     this.objects.push({ id: 4, name: 'obj4'})
   }
 
   onRemove(object) {
-    let index = this.objects.indexOf(object)
+    const index = this.objects.indexOf(object)
     this.objects.splice(index, 1)
   }
 
@@ -30,14 +35,9 @@ export class DirectivesComponent {
     ]
   }
 
-  nilObject = {
-    name : "I'm a nil object",
-    testObj : null
+  trackCourse(index, object) {
+    console.log('lul')
+    return object ? object.id : undefined
   }
 
-  trackCourse(index, object) {
-    console.log("lul")
-    return object ? object.id : undefined
-  } 
-  
 }

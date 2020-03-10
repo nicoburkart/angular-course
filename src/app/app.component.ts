@@ -11,7 +11,7 @@ export class AppComponent {
   title = 'angular-course';
 
   post = {
-    title : "Title",
+    title : 'Title',
     isFavorite: true
   }
 
@@ -20,9 +20,9 @@ export class AppComponent {
     isSelected : true
   }
 
-  items = ["nico","jonas","magali","ulas","dennis","japhet"]
+  items = ['nico', 'jonas', 'magali', 'ulas', 'dennis', 'japhet']
 
-  onFavoriteChanged(eventArgs : FavoriteChangedEventArgs) {
-    console.log("favorite changed. Selected: ", eventArgs.newValue)
+  onFavoriteChanged(eventArgs: FavoriteChangedEventArgs) {
+    console.log('favorite changed. Selected: ', eventArgs.newValue)
   }
 }

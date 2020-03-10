@@ -7,8 +7,8 @@ import { Component, Input} from '@angular/core';
 })
 export class ListComponent {
 
-  @Input('items') items : string[]
-  @Input('itemLabel') itemLabel : string
-  @Input('showLabel') showLabel : boolean = false
+  @Input('items') items: string[]
+  @Input('itemLabel') itemLabel: string
+  @Input('showLabel') showLabel = false
 
 }

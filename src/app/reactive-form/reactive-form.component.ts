@@ -9,7 +9,7 @@ import { UsernameValidators } from './username.validators';
 })
 export class ReactiveFormComponent {
 
-  //you don't need the nested formgroup. it's just an example how to do it
+  // you don't need the nested formgroup. it's just an example how to do it
   form = new FormGroup({
     account: new FormGroup({
       username : new FormControl('', [Validators.required, Validators.minLength(3), UsernameValidators.cannotContainSpace], UsernameValidators.shouldBeUnique),
@@ -32,17 +32,17 @@ export class ReactiveFormComponent {
     return this.form.get('account.password')
   }
 
-  get topics() : FormArray {
+  get topics(): FormArray {
     return this.form.get('account.topics') as FormArray
   }
 
-  addTopic(topic : HTMLInputElement) {
+  addTopic(topic: HTMLInputElement) {
     this.topics.push(new FormControl(topic.value))
     topic.value = ''
   }
 
-  removeTopic(topic : FormControl) {
-    let index = this.topics.controls.indexOf(topic)
+  removeTopic(topic: FormControl) {
+    const index = this.topics.controls.indexOf(topic)
     this.topics.removeAt(index)
   }
 

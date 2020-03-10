@@ -7,7 +7,7 @@ import { BadInput } from '../common/bad-input';
 
 export class DataService {
 
-  constructor(private url : string, private http: HttpClient) { }
+  constructor(private url: string, private http: HttpClient) { }
 
   getAll() {
     return this.http.get(this.url).pipe(
@@ -31,18 +31,19 @@ export class DataService {
   }
 
   delete(id) {
-    let response = this.http.delete(this.url + '/' + id)
+    const response = this.http.delete(this.url + '/' + id)
     return this.http.delete(this.url + '/' + id).pipe(
         map(response => response as any[]),
         catchError(this.handleError)
     )
   }
 
-  private handleError(error : Response) {
-    if (error.status === 404)
+  private handleError(error: Response) {
+    if (error.status === 404) {
       return throwError(new NotFoundError())
-    else if (error.status === 400)
+    } else if (error.status === 400) {
       return throwError(new BadInput(error.json))
+ }
     return throwError(new AppError(error))
   }
 }

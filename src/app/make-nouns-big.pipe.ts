@@ -10,9 +10,9 @@ export class MakeNounsBigPipe implements PipeTransform {
       return null;
     }
 
-    let words = value.split(' ')
+    const words = value.split(' ')
     for (let i = 0; i < words.length; i++) {
-      let word = words[i]
+      const word = words[i]
       if (this.isPreposition(word) && i > 0) {
         words[i] = word.toLowerCase()
       } else {
@@ -27,8 +27,8 @@ export class MakeNounsBigPipe implements PipeTransform {
     return word.substr(0, 1).toUpperCase() + word.substr(1).toLowerCase()
   }
 
-  private isPreposition(word: string) : boolean {
-    let prepositions = ["of", "the"]
+  private isPreposition(word: string): boolean {
+    const prepositions = ['of', 'the']
     return prepositions.includes(word.toLowerCase())
   }
 

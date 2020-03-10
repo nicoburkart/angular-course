@@ -56,6 +56,14 @@
                   "maximumError": "10kb"
                 }
               ]
+            },
+            "int": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.int.ts"
+                }
+              ]
             }
           }
         },
@@ -67,6 +75,9 @@
           "configurations": {
             "production": {
               "browserTarget": "angular-course:build:production"
+            },
+            "int": {
+              "browserTarget": "angular-course:build:int"
             }
           }
         },

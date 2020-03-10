@@ -14,12 +14,12 @@ export class ContactFormComponent {
     { id: 3, name : 'LOL'}
   ]
 
-  log(x : NgModel) {
+  log(x: NgModel) {
     console.log(x)
   }
 
-  submit(f :NgForm) {
+  submit(f: NgForm) {
     console.log(f)
   }
-  
+
 }

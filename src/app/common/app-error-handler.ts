@@ -6,5 +6,5 @@ export class AppErrorHandler implements ErrorHandler {
         alert('An unexpected error occurred.')
         console.log(error)
     }
-    
+
 }

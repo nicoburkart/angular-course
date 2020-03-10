@@ -8,9 +8,9 @@ import { AuthorService } from '../services/author.service';
 })
 export class AuthorViewComponent implements OnInit {
 
-  authors : string[]
+  authors: string[]
 
-  constructor(authorService : AuthorService) {
+  constructor(authorService: AuthorService) {
     this.authors = authorService.getAuthors()
    }
 

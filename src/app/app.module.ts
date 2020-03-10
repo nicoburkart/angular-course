@@ -64,7 +64,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    //order is very important -> checks all the names until it fits from 0 -> end
+    // order is very important -> checks all the names until it fits from 0 -> end
     RouterModule.forRoot([
       { path: '', component: HomeComponent },
       { path: 'followers/:id/:username', component: GithubProfileComponent },
@@ -77,7 +77,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AuthorService,
     PostService,
     GitFollowerService,
-    //wherver ErrorHandler is used by default, now AppErrorHandler takes its place
+    // wherver ErrorHandler is used by default, now AppErrorHandler takes its place
     {provide : ErrorHandler, useClass : AppErrorHandler}
   ],
   bootstrap: [AppComponent]

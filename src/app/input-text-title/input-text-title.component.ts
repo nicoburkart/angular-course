@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InputTextTitleComponent implements OnInit {
 
-  text : string
+  text: string
 
   constructor() { }
 

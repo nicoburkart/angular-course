@@ -11,16 +11,16 @@ export class GithubProfileComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    //we need to subscribe to this observable, because it could happen, that the params change
+    // we need to subscribe to this observable, because it could happen, that the params change
     // this.route.paramMap
     //   .subscribe(params => {
     //     let id = +params.get('id')
     //     console.log(id)
     //   })
-    
-    //If it is 100% sure, that the component gets destroyed an the ngOnInit methode will be called again,
-    //()we can use this:
-    let id = this.route.snapshot.paramMap.get('id')
+
+    // If it is 100% sure, that the component gets destroyed an the ngOnInit methode will be called again,
+    // ()we can use this:
+    const id = this.route.snapshot.paramMap.get('id')
     console.log(id)
   }
 

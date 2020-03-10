@@ -7,9 +7,9 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class LikeComponent {
 
-  color : string
-  @Input('isSelected') isSelected : boolean
-  @Input('likes') likes : number
+  color: string
+  @Input('isSelected') isSelected: boolean
+  @Input('likes') likes: number
 
   onClick() {
     this.isSelected = !this.isSelected

@@ -8,8 +8,8 @@ import { DataService } from './data.service';
 export class PostService extends DataService {
 
   constructor(http: HttpClient) {
-    super("https://jsonplaceholder.typicode.com/posts", http)
+    super('https://jsonplaceholder.typicode.com/posts', http)
    }
 
-  
+
 }

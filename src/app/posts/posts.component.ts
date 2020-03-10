@@ -10,12 +10,10 @@ import { BadInput } from '../common/bad-input';
   styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
-  
-  posts : any[]
 
-  constructor(private service : PostService) { 
-    
-  }
+  posts: any[]
+
+  constructor(private service: PostService) {}
 
   ngOnInit(): void {
     this.service.getAll()
@@ -23,7 +21,7 @@ export class PostsComponent implements OnInit {
   }
 
   createPost(input: HTMLInputElement) {
-    let post = { title : input.value }
+    const post = { title : input.value }
     this.posts.splice(0, 0, post)
 
     input.value = ''
@@ -33,21 +31,22 @@ export class PostsComponent implements OnInit {
         posts => {
           post['id'] = posts['id']
           console.log(posts)
-        }, 
-        (error : AppError) => {
+        },
+        (error: AppError) => {
           this.posts.splice(0, 1)
 
           if (error instanceof BadInput) {
-            //this.form.setErrors(error.json()) -> statt error.json() -> error.originalError
-          } else 
-            //we rethrow the error so app-error-handler can handle the error
+            // this.form.setErrors(error.json()) -> statt error.json() -> error.originalError
+          } else {
+            // we rethrow the error so app-error-handler can handle the error
             throw error
+          }
         })
   }
 
   updatePost(post) {
-    //post works as well
-    let updatePost = { 'title': 'lul'}
+    // post works as well
+    const updatePost = { title: 'lul'}
     this.service.update(post)
       .subscribe(
         response => console.log(response)
@@ -56,18 +55,18 @@ export class PostsComponent implements OnInit {
 
   deletePost(post) {
 
-    let index = this.posts.indexOf(post)
+    const index = this.posts.indexOf(post)
     this.posts.splice(index, 1)
 
     this.service.delete(post.id)
       .subscribe(
-        _ => {}, 
-        (error : AppError) => {
+        _ => {},
+        (error: AppError) => {
           this.posts.splice(index, 0, post)
 
-          if (error instanceof NotFoundError)
+          if (error instanceof NotFoundError) {
             alert('This post has already been deleted')
-          else throw error
+          } else { throw error }
         })
   }
 }

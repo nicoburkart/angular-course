@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ZippyComponent {
 
-  @Input('title') title : string
+  @Input('title') title: string
 
   isCollapsed = true
 
