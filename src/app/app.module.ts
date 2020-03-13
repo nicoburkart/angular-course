@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule, ErrorHandler } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -32,6 +33,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HomeComponent } from './home/home.component';
 import { GithubProfileComponent } from './github-profile/github-profile.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { AnimationComponent } from './animation/animation.component';
 
 @NgModule({
   declarations: [
@@ -57,13 +59,15 @@ import { NotFoundComponent } from './not-found/not-found.component';
     NavbarComponent,
     HomeComponent,
     GithubProfileComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    AnimationComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     // order is very important -> checks all the names until it fits from 0 -> end
     RouterModule.forRoot([
       { path: '', component: HomeComponent },

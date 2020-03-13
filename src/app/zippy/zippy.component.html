@@ -3,7 +3,7 @@
         <span>{{ title }}</span>
         <span style="float: right;" (click)= "isCollapsed = !isCollapsed"><img *ngIf="isCollapsed; then arrowUp else arrowDown"></span>
     </div>
-    <div *ngIf = "!isCollapsed" class = "card-body">
+    <div [@expandCollapse]="isCollapsed ? 'collapsed' : 'expanded'" class = "card-body zippy-body">
         <ng-content></ng-content>
     </div>
 </div>
